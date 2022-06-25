@@ -1,4 +1,4 @@
-
+import './Node.css'
 export default function PathFinder(props) {
     const {
         col,
@@ -9,6 +9,7 @@ export default function PathFinder(props) {
         onMouseEnter,
         onMouseUp,
         row,
+        onClick
       } = props;
       const extraClassName = isFinish
         ? 'node-finish'
@@ -21,6 +22,7 @@ export default function PathFinder(props) {
     return <div
     id={`node-${row}-${col}`}
     className={`node ${extraClassName}`}
+    onClick={()=> onClick(row,col) }
     onMouseDown={() => onMouseDown(row, col)}
     onMouseEnter={() => onMouseEnter(row, col)}
     onMouseUp={() => onMouseUp()}></div>
